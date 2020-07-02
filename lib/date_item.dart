@@ -35,8 +35,12 @@ class _DateItem extends StatefulWidget {
   /// Decoration [Widget]
   final Widget decoration;
 
+  /// width of calendar item
+  final double width;
+
   _DateItem({
     this.date,
+    this.width = 30,
     this.dateStyle,
     this.pressedDateStyle,
     this.backgroundColor = Colors.transparent,
@@ -88,7 +92,7 @@ class __DateItemState extends State<_DateItem> {
 
   /// Body layout
   Widget _body() => Container(
-        width: 50,
+        width: widget.width,
         height: 50,
         alignment: FractionalOffset.center,
         child: GestureDetector(
@@ -125,7 +129,7 @@ class __DateItemState extends State<_DateItem> {
         left: 0,
         right: 0,
         child: Container(
-            width: 50,
+            width: widget.width,
             height: 12,
             alignment: widget.decorationAlignment,
             child: widget.decoration != null

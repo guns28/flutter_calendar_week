@@ -99,12 +99,16 @@ class CalendarWeek extends StatefulWidget {
   /// Height of calendar
   final double height;
 
+  /// width of calendar item
+  final double width;
+
   CalendarWeekController controller;
 
   CalendarWeek(
       {@required this.maxDate,
       @required this.minDate,
       this.key,
+        this.width = 30,
       this.height = 80,
       this.dayOfWeekStyle =
           const TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
@@ -240,7 +244,7 @@ class _CalendarWeekState extends State<CalendarWeek> {
       child: FittedBox(
         fit: BoxFit.scaleDown,
         child: Container(
-          width: 50,
+          width: widget.width,
           child: Text(
             title,
             style: widget.dayOfWeekStyle,
@@ -258,6 +262,7 @@ class _CalendarWeekState extends State<CalendarWeek> {
   /// Date item layout
   Widget _dateItem(DateTime date) => _DateItem(
         date: date,
+        width: widget.width,
         dateStyle: _compareDate(date, _today)
             ? widget.todayDateStyle
             : widget.dateStyle,

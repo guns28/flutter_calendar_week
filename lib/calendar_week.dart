@@ -101,6 +101,7 @@ class CalendarWeek extends StatefulWidget {
 
   /// width of calendar item
   final double width;
+  
 
   CalendarWeekController controller;
 

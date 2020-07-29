@@ -19,4 +19,4 @@ const List<String> _dayOfWeekDefault = [
 ];
 
 /// Today date time
-final _today = DateTime.now();
+final _today = DateTime.now().add(Duration(days: 1));
